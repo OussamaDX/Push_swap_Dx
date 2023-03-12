@@ -6,7 +6,7 @@
 /*   By: ooussaad <ooussaad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 11:01:43 by ooussaad          #+#    #+#             */
-/*   Updated: 2023/03/07 15:34:06 by ooussaad         ###   ########.fr       */
+/*   Updated: 2023/03/12 17:00:18 by ooussaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,10 @@ void	free_stack(t_stack **a)
 		free(*a);
 		*a = tmp;
 	}
+}
+
+void	exit_error(void)
+{
+	write(2, "Error", 5);
+	exit(1);
 }

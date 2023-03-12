@@ -6,7 +6,7 @@
 /*   By: ooussaad <ooussaad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 19:49:15 by ooussaad          #+#    #+#             */
-/*   Updated: 2023/03/11 13:23:02 by ooussaad         ###   ########.fr       */
+/*   Updated: 2023/03/12 17:01:25 by ooussaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,25 @@ t_stack	*new_element(int value, t_stack *next)
 	return (lst);
 }
 
+void	check_len(char *str)
+{
+	int	k;
+
+	k = 0;
+	if (str[k] == '+' || str[k] == '-')
+	{
+		exit_error();
+	}
+}
+
 void	create_new_element(char *a, t_stack **lst)
 {
 	int	tmp;
 
 	if (!a || !a[0])
 		exit_error();
+	if (ft_strlen(a) == 1)
+		check_len(a);
 	tmp = ft_atoi(a);
 	*lst = new_element(tmp, *lst);
 }
